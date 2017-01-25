@@ -10,6 +10,8 @@
 
 @interface ViewController : NSViewController
 
+@property (nonatomic, strong) IBOutlet NSImageView *iconImageView;/**<解释>*/
+@property (nonatomic, assign) IBOutlet NSButton *iconBtn;/**<解释>*/
 
 @end
 

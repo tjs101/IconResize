@@ -12,6 +12,7 @@
 		667A36F21E3888C7002F7238 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 667A36F11E3888C7002F7238 /* ViewController.m */; };
 		667A36F41E3888C7002F7238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667A36F31E3888C7002F7238 /* Assets.xcassets */; };
 		667A36F71E3888C7002F7238 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667A36F51E3888C7002F7238 /* Main.storyboard */; };
+		667A37011E389CA6002F7238 /* NSImage+Utitly.m in Sources */ = {isa = PBXBuildFile; fileRef = 667A37001E389CA6002F7238 /* NSImage+Utitly.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		667A36F31E3888C7002F7238 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		667A36F61E3888C7002F7238 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		667A36F81E3888C7002F7238 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		667A36FE1E3892E8002F7238 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		667A36FF1E389CA6002F7238 /* NSImage+Utitly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Utitly.h"; sourceTree = "<group>"; };
+		667A37001E389CA6002F7238 /* NSImage+Utitly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Utitly.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				667A36EA1E3888C7002F7238 /* AppDelegate.h */,
 				667A36EB1E3888C7002F7238 /* AppDelegate.m */,
+				667A36FF1E389CA6002F7238 /* NSImage+Utitly.h */,
+				667A37001E389CA6002F7238 /* NSImage+Utitly.m */,
 				667A36F01E3888C7002F7238 /* ViewController.h */,
 				667A36F11E3888C7002F7238 /* ViewController.m */,
 				667A36F31E3888C7002F7238 /* Assets.xcassets */,
@@ -148,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				667A36F21E3888C7002F7238 /* ViewController.m in Sources */,
+				667A37011E389CA6002F7238 /* NSImage+Utitly.m in Sources */,
 				667A36EF1E3888C7002F7238 /* main.m in Sources */,
 				667A36EC1E3888C7002F7238 /* AppDelegate.m in Sources */,
 			);
@@ -160,6 +167,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				667A36F61E3888C7002F7238 /* Base */,
+				667A36FE1E3892E8002F7238 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -171,6 +179,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -218,6 +227,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
