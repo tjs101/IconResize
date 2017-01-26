@@ -35,7 +35,13 @@
        
         NSData *data = [NSData dataWithContentsOfURL:panel.URL];
 
-        self.iconImageView.image = [[NSImage alloc] initWithData:data];
+        NSImage *image = [[NSImage alloc] initWithData:data];
+        
+        NSImageRep *imageRep = [image bestRepresentationForRect:NSMakeRect(0, 0, image.size.width, image.size.height) context:NULL hints:nil];
+        NSSize size = NSMakeSize([imageRep pixelsWide],[imageRep pixelsHigh]);
+        [image setSize:size];
+        
+        self.iconImageView.image = image;
         
     }];
 }
@@ -56,22 +62,10 @@
 //        NSFileManager *fileManager = [NSFileManager defaultManager];
 //        BOOL success = [fileManager createDirectoryAtURL:panel.URL withIntermediateDirectories:YES attributes:nil error:NULL];
         if (YES) {
-            
-            
-            NSLog(@"path==%@  %@", [path stringByAppendingPathComponent:@"1.png"], panel.directoryURL);
 
-            NSImage *image = [NSImage scaleImage:self.iconImageView.image toSize:NSMakeSize(100, 100) proportionally:NO];
-            NSLog(@"size %@", NSStringFromSize(image.size));
-//            
-//            [image lockFocus];
-//            
-//            NSBitmapImageRep *bitmap = [[NSBitmapImageRep alloc] initWithFocusedViewRect:NSMakeRect(0, 0, 100, 100)];
-//            
-//            [image unlockFocus];
-//            
-//            NSDictionary *dict = @{NSImageCompressionFactor : @(0)};
-//            NSData *data = [bitmap representationUsingType:NSBitmapImageFileTypePNG properties:dict];
-            BOOL success = [image.TIFFRepresentation writeToURL:panel.URL atomically:YES];
+            NSImage *image = [self.iconImageView.image scaleImageSize:NSMakeSize(100, 100)];
+
+            BOOL success = [[image TIFFRepresentationUsingCompression:NSTIFFCompressionJPEG factor:0.1f] writeToURL:panel.URL atomically:YES];
             NSLog(@"success %d", success);
             
         }

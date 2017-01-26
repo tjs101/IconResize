@@ -10,6 +10,6 @@
 
 @interface NSImage (Utitly)
 
-+ (NSImage *)scaleImage:(NSImage *)image toSize:(NSSize)newSize proportionally:(BOOL)prop;
+- (NSImage *)scaleImageSize:(NSSize)newSize;
 
 @end

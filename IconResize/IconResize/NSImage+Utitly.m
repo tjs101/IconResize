@@ -10,29 +10,27 @@
 
 @implementation NSImage (Utitly)
 
-+ (NSImage *)scaleImage:(NSImage *)image toSize:(NSSize)newSize proportionally:(BOOL)prop
+- (NSImage *)scaleImageSize:(NSSize)newSize
 {
-    if (image) {
-        NSImage *copy = [image copy];
-        NSSize size = [copy size];
+    NSImage *sourceImage = self;
+    if ([sourceImage isValid])
+    {
+        if (self.size.width == newSize.width && self.size.height == newSize.height && newSize.width <= 0 && newSize.height <= 0) {
+            return self;
+        }
         
-        if (prop) {
-            float rx, ry, r;
-            
-            rx = newSize.width / size.width;
-            ry = newSize.height / size.height;
-            r = rx < ry ? rx : ry;
-            size.width *= r;
-            size.height *= r;
-        } else
-            size = newSize;
+        NSRect oldRect = NSMakeRect(0.0, 0.0, self.size.width, self.size.height);
+        NSRect newRect = NSMakeRect(0,0,newSize.width,newSize.height);
+        NSImage *newImage = [[NSImage alloc] initWithSize:newSize];
         
-        [copy setScalesWhenResized:YES];
-        [copy setSize:size];
+        [newImage lockFocus];
+        [sourceImage drawInRect:newRect fromRect:oldRect operation:NSCompositingOperationCopy fraction:1.0];
+        [newImage unlockFocus];
         
-        return copy;
+        return newImage;
     }
-    return nil; // or 'image' if you prefer.
+    
+    return self;
 }
 
 @end
