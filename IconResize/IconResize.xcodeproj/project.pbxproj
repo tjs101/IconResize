@@ -13,6 +13,7 @@
 		667A36F41E3888C7002F7238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667A36F31E3888C7002F7238 /* Assets.xcassets */; };
 		667A36F71E3888C7002F7238 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667A36F51E3888C7002F7238 /* Main.storyboard */; };
 		667A37011E389CA6002F7238 /* NSImage+Utitly.m in Sources */ = {isa = PBXBuildFile; fileRef = 667A37001E389CA6002F7238 /* NSImage+Utitly.m */; };
+		6685CBFF1E5402420091764D /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 6685CBFE1E5402420091764D /* Contents.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		667A36FE1E3892E8002F7238 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		667A36FF1E389CA6002F7238 /* NSImage+Utitly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Utitly.h"; sourceTree = "<group>"; };
 		667A37001E389CA6002F7238 /* NSImage+Utitly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Utitly.m"; sourceTree = "<group>"; };
+		6685CBFE1E5402420091764D /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		667A36ED1E3888C7002F7238 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6685CBFE1E5402420091764D /* Contents.json */,
 				667A36EE1E3888C7002F7238 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -143,6 +146,7 @@
 			files = (
 				667A36F41E3888C7002F7238 /* Assets.xcassets in Resources */,
 				667A36F71E3888C7002F7238 /* Main.storyboard in Resources */,
+				6685CBFF1E5402420091764D /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +313,7 @@
 				667A36FD1E3888C7002F7238 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

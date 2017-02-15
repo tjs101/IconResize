@@ -52,22 +52,49 @@
     panel.canCreateDirectories = YES;
     panel.title = LSTR(@"save file");
     panel.message = LSTR(@"save file image");
-    panel.nameFieldLabel = @"dirName";
-    panel.nameFieldStringValue = @"IconResize.png";
+    panel.nameFieldLabel = @"Name:";
+    panel.nameFieldStringValue = @"IconResize";
     [panel beginWithCompletionHandler:^(NSInteger result) {
         
-        NSString *path = panel.URL.absoluteString;
-        NSLog(@"path----%@", panel.URL);
-        
-//        NSFileManager *fileManager = [NSFileManager defaultManager];
-//        BOOL success = [fileManager createDirectoryAtURL:panel.URL withIntermediateDirectories:YES attributes:nil error:NULL];
-        if (YES) {
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        BOOL success = [fileManager createDirectoryAtURL:panel.URL withIntermediateDirectories:YES attributes:nil error:NULL];
+        if (success) {
 
-            NSImage *image = [self.iconImageView.image scaleImageSize:NSMakeSize(100, 100)];
-
-            BOOL success = [[image TIFFRepresentationUsingCompression:NSTIFFCompressionJPEG factor:0.1f] writeToURL:panel.URL atomically:YES];
-            NSLog(@"success %d", success);
+            NSArray *sizes = @[@{@"20" : @"Icon-App-20x20@1x.png"} ,
+                               @{@"40" : @"Icon-App-20x20@2x.png"} ,
+                               @{@"60" : @"Icon-App-20x20@3x.png"} ,
+                               @{@"29" : @"Icon-App-29x29@1x.png"} ,
+                               @{@"58" : @"Icon-App-29x29@2x.png"} ,
+                               @{@"87" : @"Icon-App-29x29@3x.png"} ,
+                               @{@"40" : @"Icon-App-40x40@1x.png"} ,
+                               @{@"80" : @"Icon-App-40x40@2x.png"} ,
+                               @{@"120" : @"Icon-App-40x40@3x.png"} ,
+                               @{@"60" : @"Icon-App-60x60@1x.png"} ,
+                               @{@"120" : @"Icon-App-60x60@2x.png"} ,
+                               @{@"180" : @"Icon-App-60x60@3x.png"} ,
+                               @{@"76" : @"Icon-App-76x76@1x.png"} ,
+                               @{@"152" : @"Icon-App-76x76@2x.png"} ,
+                               @{@"228" : @"Icon-App-76x76@3x.png"} ,
+                               @{@"83.5" : @"Icon-App-83.5x83.5@2x.png"} ,
+                               ];
             
+            for (NSDictionary *dict in sizes) {
+
+                // 尺寸
+                float width = [[[dict allKeys] lastObject] floatValue];
+                
+                NSImage *image = [self.iconImageView.image scaleImageSize:NSMakeSize(width, width)];
+                
+                // 名称
+                NSString *fileName = [[dict allValues] lastObject];
+                
+                // 保存
+                BOOL success = [[image TIFFRepresentationUsingCompression:NSTIFFCompressionJPEG factor:0.1f] writeToURL:[NSURL URLWithString:[panel.URL.absoluteString stringByAppendingPathComponent:fileName]] atomically:YES];
+                if (!success) {
+                    NSLog(@"失败");
+                }
+            }
+
         }
         else {
             
