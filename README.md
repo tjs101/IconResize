@@ -9,10 +9,10 @@ ios图标自动化生成,当前版本包括了可以生成iPhone、iPad、Watche
 ![](1.png)
 
 
-![](2.png)
-
-
 ![](3.png)
+
+
+![](2.png)
 
 
 ![](4.png)
