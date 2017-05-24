@@ -124,7 +124,7 @@
 				TargetAttributes = {
 					667A36E61E3888C7002F7238 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4J67FTSTQJ;
+						DevelopmentTeam = G25F39SF49;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -290,7 +290,7 @@
 				CODE_SIGN_ENTITLEMENTS = IconResize/IconResize.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 4J67FTSTQJ;
+				DEVELOPMENT_TEAM = G25F39SF49;
 				INFOPLIST_FILE = IconResize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -306,7 +306,7 @@
 				CODE_SIGN_ENTITLEMENTS = IconResize/IconResize.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 4J67FTSTQJ;
+				DEVELOPMENT_TEAM = G25F39SF49;
 				INFOPLIST_FILE = IconResize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;

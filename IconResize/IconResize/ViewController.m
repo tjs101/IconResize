@@ -120,29 +120,39 @@
         if (success) {
 
             // ios
-            NSArray *ios_sizes = @[@{@"20" : @"Icon-App-20x20@1x.png"} ,
-                               @{@"40" : @"Icon-App-20x20@2x.png"} ,
-                               @{@"60" : @"Icon-App-20x20@3x.png"} ,
-                               @{@"29" : @"Icon-App-29x29@1x.png"} ,
-                               @{@"58" : @"Icon-App-29x29@2x.png"} ,
-                               @{@"87" : @"Icon-App-29x29@3x.png"} ,
-                               @{@"40" : @"Icon-App-40x40@1x.png"} ,
-                               @{@"80" : @"Icon-App-40x40@2x.png"} ,
-                               @{@"120" : @"Icon-App-40x40@3x.png"} ,
-                               @{@"57" : @"Icon-App-57x57@1x.png"} ,
-                               @{@"114" : @"Icon-App-57x57@2x.png"} ,
-                               @{@"60" : @"Icon-App-60x60@1x.png"} ,
-                               @{@"120" : @"Icon-App-60x60@2x.png"} ,
-                               @{@"180" : @"Icon-App-60x60@3x.png"} ,
-                               @{@"72" : @"Icon-App-72x72@1x.png"} ,
-                               @{@"144" : @"Icon-App-72x72@2x.png"} ,
-                               @{@"76" : @"Icon-App-76x76@1x.png"} ,
-                               @{@"152" : @"Icon-App-76x76@2x.png"} ,
-                               @{@"228" : @"Icon-App-76x76@3x.png"} ,
-                               @{@"167" : @"Icon-App-83.5x83.5@2x.png"} ,
-                               @{@"50" : @"Icon-Small-50x50@1x.png"} ,
-                               @{@"100" : @"Icon-Small-50x50@2x.png"} ,
-                               ];
+            NSArray *ios_sizes = @[@{@"28.5" : @"Icon-57.png"} ,
+                                   @{@"57" : @"Icon-57@2x.png"} ,
+                                   @{@"60" : @"Icon-60@2x.png"} ,
+                                   @{@"90" : @"Icon-60@3x.png"} ,
+                                   @{@"14.5" : @"Icon-Small.png"} ,
+                                   @{@"29" : @"Icon-Small@2x.png"} ,
+                                   @{@"43.5" : @"Icon-Small@3x.png"} ,
+                                   @{@"40" : @"Icon-Spotlight-40@2x.png"} ,
+                                   @{@"60" : @"Icon-Spotlight-40@3x.png"}
+                                   ];
+//            NSArray *ios_sizes = @[@{@"20" : @"Icon-App-20x20@1x.png"} ,
+//                               @{@"40" : @"Icon-App-20x20@2x.png"} ,
+//                               @{@"60" : @"Icon-App-20x20@3x.png"} ,
+//                               @{@"29" : @"Icon-App-29x29@1x.png"} ,
+//                               @{@"58" : @"Icon-App-29x29@2x.png"} ,
+//                               @{@"87" : @"Icon-App-29x29@3x.png"} ,
+//                               @{@"40" : @"Icon-App-40x40@1x.png"} ,
+//                               @{@"80" : @"Icon-App-40x40@2x.png"} ,
+//                               @{@"120" : @"Icon-App-40x40@3x.png"} ,
+//                               @{@"57" : @"Icon-App-57x57@1x.png"} ,
+//                               @{@"114" : @"Icon-App-57x57@2x.png"} ,
+//                               @{@"60" : @"Icon-App-60x60@1x.png"} ,
+//                               @{@"120" : @"Icon-App-60x60@2x.png"} ,
+//                               @{@"180" : @"Icon-App-60x60@3x.png"} ,
+//                               @{@"72" : @"Icon-App-72x72@1x.png"} ,
+//                               @{@"144" : @"Icon-App-72x72@2x.png"} ,
+//                               @{@"76" : @"Icon-App-76x76@1x.png"} ,
+//                               @{@"152" : @"Icon-App-76x76@2x.png"} ,
+//                               @{@"228" : @"Icon-App-76x76@3x.png"} ,
+//                               @{@"167" : @"Icon-App-83.5x83.5@2x.png"} ,
+//                               @{@"50" : @"Icon-Small-50x50@1x.png"} ,
+//                               @{@"100" : @"Icon-Small-50x50@2x.png"} ,
+//                               ];
             
             // watch
             NSArray *watch_sizes = @[@{@"48" : @"Icon-24@2x.png"} ,
@@ -191,7 +201,7 @@
                 success = [fileManager createDirectoryAtURL:[NSURL URLWithString:path] withIntermediateDirectories:YES attributes:nil error:NULL];
 
                 if (success) {
-                    showSuccess = [self saveIcons:ios_sizes path:path plistName:@"IOS_Contents" needPlist:YES];
+                    showSuccess = [self saveIcons:ios_sizes path:path plistName:@"IOS_Contents" needPlist:NO];
                 }
 
             }
